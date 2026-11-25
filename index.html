@@ -153,7 +153,37 @@ footer{margin-top:24px}
 .plan-protection{font-size:.92rem;line-height:1.7;color:var(--muted);margin:8px 0 16px}
 .plan-row.read-only .listrow{flex:1}
 @media(max-width:730px){.save-screen{padding-top:16px;min-height:auto}.save-grid{gap:11px}.save-card{min-height:155px;padding:15px}.save-screen .workspace-heading{margin-bottom:15px}}
- .language-choice{display:flex;align-items:center;gap:11px;color:#deebd4;font-size:1rem;margin-top:0}.language-choice select{font:inherit;color:#edf5e4;background:#293e31;border:1px solid #93ad7a;padding:9px 13px;min-width:178px;max-width:100%;border-radius:5px}.language-choice select:focus-visible{outline:2px solid #d6ef6a;outline-offset:3px}html[dir=ltr] .listrow{text-align:left}html[dir=ltr] .eng{text-align:left}html[dir=ltr] .rx small{text-align:right}html[dir=ltr] .steps li{padding:9px 0 9px 36px}html[dir=ltr] .steps li:before{right:auto;left:0}.save-card.new-slot{text-align:start}html[dir=ltr] .header-label{text-align:right}html[dir=ltr] .start-title{text-align:left}.language-choice option{background:#293e31;color:#edf5e4}</style></head>
+ .language-choice{display:flex;align-items:center;gap:11px;color:#deebd4;font-size:1rem;margin-top:0}.language-choice select{font:inherit;color:#edf5e4;background:#293e31;border:1px solid #93ad7a;padding:9px 13px;min-width:178px;max-width:100%;border-radius:5px}.language-choice select:focus-visible{outline:2px solid #d6ef6a;outline-offset:3px}html[dir=ltr] .listrow{text-align:left}html[dir=ltr] .eng{text-align:left}html[dir=ltr] .rx small{text-align:right}html[dir=ltr] .steps li{padding:9px 0 9px 36px}html[dir=ltr] .steps li:before{right:auto;left:0}.save-card.new-slot{text-align:start}html[dir=ltr] .header-label{text-align:right}html[dir=ltr] .start-title{text-align:left}.language-choice option{background:#293e31;color:#edf5e4}
+/* Connected edition: lightweight CSS, no remote assets or libraries. */
+html.online-design {--paper:#f3f6ef;--line:#dce4d7;--ink:#15251e;--lime:#d8fa83;background:radial-gradient(ellipse at 85% 0%,#e4efda 0,transparent 38%),var(--paper)}
+.online-design header {background:linear-gradient(115deg,#10231c,#234537);border-bottom:1px solid #658265;box-shadow:0 5px 24px #1f422014}
+.online-design .start-screen {position:relative;isolation:isolate;border:1px solid #47624a;border-radius:26px;background:linear-gradient(145deg,#10271e,#19382b 70%,#29452c);box-shadow:0 24px 60px #14331c28;min-height:460px}
+.online-design .start-copy {position:relative;z-index:1}
+.online-design .start-title {text-shadow:0 0 32px #c9f87935,3px 4px 0 #426549;letter-spacing:-.045em}
+.online-design .start-art {position:relative;background:radial-gradient(ellipse,#42613b,#203d30 72%);border:0;padding:clamp(14px,3vw,32px);overflow:hidden}
+.online-design .start-art img {position:relative;z-index:1;border:1px solid #75906a;border-radius:13px;box-shadow:0 16px 36px #071a13a8}
+.online-design .start-art::after {content:"";position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 35%,#b9ef6c28 50%,transparent 65%);pointer-events:none;animation:acore-light 11s ease-in-out infinite}
+.online-design .play-button {border:0;border-radius:13px;box-shadow:0 6px 25px #b8ef6240;min-height:54px;transition:transform .2s,box-shadow .2s,background .2s}
+.online-design .play-button:hover {transform:translateY(-3px);box-shadow:0 9px 28px #b8ef6260}
+.online-design .start-meta {font-size:.9rem}
+.online-design .language-choice select {border-radius:9px}
+.online-design .workspace-heading {padding-block:12px}
+.online-design .save-card,.online-design .listrow,.online-design .extra-card,.online-design .program-goal {border-radius:15px;box-shadow:0 4px 16px #12351e09}
+.online-design .save-card,.online-design .listrow,.online-design .day,.online-design .toolbar-button,.online-design .modes button,.online-design .small-button {transition:background .18s,border-color .18s,box-shadow .18s,transform .18s}
+.online-design .day[aria-pressed=true],.online-design .modes button[aria-pressed=true] {box-shadow:0 3px 9px #284d2522}
+.online-design .search:focus-within {border-color:#739653;box-shadow:0 0 0 3px #a2c77e35}
+.online-design dialog {border-radius:22px;box-shadow:0 20px 70px #08170f66}
+.online-design dialog::backdrop {background:#0e231cc4}
+.online-design dialog[open],.online-design main:not([hidden]) {animation:acore-enter .32s ease-out both}
+.online-design #list > :nth-child(-n+5),.online-design .save-grid > :nth-child(-n+5) {animation:acore-enter .28s ease-out both}
+@keyframes acore-enter {from{opacity:.55;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@keyframes acore-light {0%,100%{transform:translateX(-30%)}50%{transform:translateX(30%)}}
+@media (hover:hover) {.online-design .save-card:hover,.online-design .listrow:hover {transform:translateY(-2px);box-shadow:0 8px 20px #12351e14}}
+@media(max-width:730px){.online-design .start-screen{min-height:0;border-radius:20px}.online-design .start-art{padding:15px}.online-design .start-copy{padding:26px}}
+@media(prefers-reduced-motion:reduce){.online-design *, .online-design *::after,.online-design *::before{animation:none!important;transition:none!important}}
+.back-top{position:fixed;inset-inline-end:18px;bottom:18px;z-index:5;width:46px;height:46px;border-radius:12px;border:1px solid #6d8b5f;background:#19382b;color:#e4ffab;font-size:24px;box-shadow:0 4px 15px #12351e22}
+.online-design .back-top:hover{background:#315b40}
+</style></head>
 <body><header><div class="bar"><a class="brand" href="#" aria-label="الصفحة الرئيسية" dir="ltr"><i aria-hidden="true" class="pixel-mark"></i> ACORE</a><span class="header-label" dir="ltr">developer Ayman</span></div></header>
 <main id="welcome" class="welcome">
 <section class="start-screen" aria-labelledby="welcome-title">
@@ -212,7 +242,7 @@ footer{margin-top:24px}
 <div class="form-actions"><button type="submit" class="toolbar-button primary">حفظ</button><button type="button" class="toolbar-button" id="cancel-plan-edit">إلغاء</button></div>
 </form>
 </dialog>
-<footer><b dir="ltr">ACORE</b><span dir="ltr">developer Ayman</span></footer><script type="application/json" id="plan-snapshot">null</script><script>const exercises = [
+<button id="back-top" class="back-top" type="button" aria-label="العودة إلى الأعلى" hidden>↑</button><footer><b dir="ltr">ACORE</b><span dir="ltr">developer Ayman</span></footer><script type="application/json" id="plan-snapshot">null</script><script>const exercises = [
   {
     "en": "Lat Pulldown",
     "ar": "السحب العلوي",
@@ -2349,6 +2379,10 @@ const EXERCISE_TRANSLATIONS = [{"ar":["السحب العلوي","اضبط وسا
 const get = id => document.getElementById(id);
 const detail = get('detail');
 const downloadedCopy = !['http:','https:'].includes(location.protocol);
+function updateDesign(){document.documentElement.classList.toggle('online-design',!downloadedCopy&&navigator.onLine);}
+updateDesign();
+window.addEventListener('online',updateDesign);
+window.addEventListener('offline',updateDesign);
 const search = get('search');
 const equipment = get('equipment');
 const category = get('category');
@@ -2589,15 +2623,15 @@ function openSlot(id=null) {
   days=slot?slot.days:clone(suggestedDays);
   dayIndex=0;
   get('welcome').hidden=true;get('saves').hidden=true;get('app').hidden=false;
-  selectMode('weekly');window.scrollTo(0,0);
+  selectMode('weekly');window.scrollTo(0,0);updateBackTop();
   get('weekly').focus();
 }
 function showSlots() {
   get('welcome').hidden=true;get('app').hidden=true;get('saves').hidden=false;
-  renderSlots();window.scrollTo(0,0);get('saves-title').focus();
+  renderSlots();window.scrollTo(0,0);updateBackTop();get('saves-title').focus();
 }
 function showHome() {
-  get('app').hidden=true;get('saves').hidden=true;get('welcome').hidden=false;window.scrollTo(0,0);
+  get('app').hidden=true;get('saves').hidden=true;get('welcome').hidden=false;window.scrollTo(0,0);updateBackTop();
   get('play').focus();
 }
 function renderSlots() {
@@ -3482,9 +3516,13 @@ category.addEventListener('change',render);
 targetDay.addEventListener('change',render);
 savedOnly.addEventListener('change',render);
 
+function updateBackTop(){get('back-top').hidden=get('app').hidden||window.scrollY<450;}
+window.addEventListener('scroll',updateBackTop,{passive:true});
+get('back-top').addEventListener('click',()=>window.scrollTo({top:0,behavior:!downloadedCopy&&navigator.onLine&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'}));
 function applyLanguage() {
   translateStatic();
   get('language').value=language;
+  get('back-top').setAttribute('aria-label',({en:'Back to top',ar:'العودة إلى الأعلى',darija:'رجع للفوق'})[language]);
   for(const option of [...category.options,...equipment.options]) {
     if(option.value)option.textContent=t(option.value);
   }
