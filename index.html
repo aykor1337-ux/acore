@@ -183,7 +183,7 @@ html.online-design {--paper:#f3f6ef;--line:#dce4d7;--ink:#15251e;--lime:#d8fa83;
 @media(prefers-reduced-motion:reduce){.online-design *, .online-design *::after,.online-design *::before{animation:none!important;transition:none!important}}
 .back-top{position:fixed;inset-inline-end:18px;bottom:18px;z-index:5;width:46px;height:46px;border-radius:12px;border:1px solid #6d8b5f;background:#19382b;color:#e4ffab;font-size:24px;box-shadow:0 4px 15px #12351e22}
 .online-design .back-top:hover{background:#315b40}
-</style></head>
+footer{flex-wrap:wrap;gap:12px}footer a{color:inherit;text-underline-offset:3px}</style></head>
 <body><header><div class="bar"><a class="brand" href="#" aria-label="الصفحة الرئيسية" dir="ltr"><i aria-hidden="true" class="pixel-mark"></i> ACORE</a><span class="header-label" dir="ltr">developer Ayman</span></div></header>
 <main id="welcome" class="welcome">
 <section class="start-screen" aria-labelledby="welcome-title">
@@ -242,7 +242,7 @@ html.online-design {--paper:#f3f6ef;--line:#dce4d7;--ink:#15251e;--lime:#d8fa83;
 <div class="form-actions"><button type="submit" class="toolbar-button primary">حفظ</button><button type="button" class="toolbar-button" id="cancel-plan-edit">إلغاء</button></div>
 </form>
 </dialog>
-<button id="back-top" class="back-top" type="button" aria-label="العودة إلى الأعلى" hidden>↑</button><footer><b dir="ltr">ACORE</b><span dir="ltr">developer Ayman</span></footer><script type="application/json" id="plan-snapshot">null</script><script>const exercises = [
+<button id="back-top" class="back-top" type="button" aria-label="العودة إلى الأعلى" hidden>↑</button><footer><b dir="ltr">ACORE</b><span dir="ltr">developer Ayman</span><span><span id="contact-label">للتواصل</span> · <a dir="ltr" href="mailto:aykorkira@gmail.com">aykorkira@gmail.com</a></span></footer><script type="application/json" id="plan-snapshot">null</script><script>const exercises = [
   {
     "en": "Lat Pulldown",
     "ar": "السحب العلوي",
@@ -3522,6 +3522,7 @@ get('back-top').addEventListener('click',()=>window.scrollTo({top:0,behavior:!do
 function applyLanguage() {
   translateStatic();
   get('language').value=language;
+  get('contact-label').textContent=language==='en'?'Contact':'للتواصل';
   get('back-top').setAttribute('aria-label',({en:'Back to top',ar:'العودة إلى الأعلى',darija:'رجع للفوق'})[language]);
   for(const option of [...category.options,...equipment.options]) {
     if(option.value)option.textContent=t(option.value);
