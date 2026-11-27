@@ -2728,6 +2728,23 @@ function loadSlots() {
   return migrated;
 }
 let slots=loadSlots();
+function includeFreeWeightsPlan() {
+  const marker=slotsKey+':freeweights-v1';
+  if(readLocal(marker)===true)return;
+  if(!slots.some(slot=>slot.id==='freeweights')) {
+    const plan=clone(suggestedDays);
+    plan[0][2][1][0]=67; // Flat barbell bench press
+    plan[0][2][3][0]=28; // Incline dumbbell press
+    plan[4][2][0][0]=28;
+    plan[5][2][3][0]=86; // EZ-bar curl
+    slots.unshift({id:'freeweights',name:'Free Weights',days:plan});
+  }
+  try {
+    localStorage.setItem(slotsKey,JSON.stringify(slots));
+    localStorage.setItem(marker,'true');
+  } catch {}
+}
+includeFreeWeightsPlan();
 let activeSlotId=null;
 let days=clone(suggestedDays);
 let slotNotice='';
